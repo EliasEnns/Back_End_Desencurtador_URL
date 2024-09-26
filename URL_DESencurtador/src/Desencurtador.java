@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Desencurtador {
     private String apiUrl = "https://unshorten.me/api/v2/unshorten?url=";
-    private String apiToken = "a1262b7cd8964a0dca22286797e3ccbea9aeb027";
+    private String apiToken = "CENSURADO";
     private String shortUrl;
     private String longUrl;
 
