@@ -84,5 +84,6 @@ https://www.reddit.com
 ## ℹ️ Observações
 
 O limite de requisições por hora depende do plano gratuito da Unshorten.me.
+
 Esta API foi desenvolvida como parte de um projeto acadêmico por Elias Enns e Michel Almeida da Rosa.
 
