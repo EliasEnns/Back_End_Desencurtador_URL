@@ -1,6 +1,6 @@
 # 🚀 Desencurtador de Links - API
 
-<span style="color:blue">some *blue* text</span>
+<span style="color:red">some *blue* text</span>
 
 Este projeto é uma API desenvolvida em Java que permite desencurtar URLs, retornando o link original de URLs encurtadas. Ele utiliza a API do Unshorten.me para realizar o processo de desencurtamento de forma simples e eficiente.
 
