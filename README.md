@@ -65,6 +65,7 @@ Exemplo de resposta:
 ```
 
 **`POST`** /api/desencurtar
+
 Envia uma URL encurtada para ser desencurtada.
 
 Corpo da requisição (JSON):
