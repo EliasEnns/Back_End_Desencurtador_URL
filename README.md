@@ -38,7 +38,7 @@ docker-compose up --build
 
 ## 🔗 Endpoints da API
 
-**GET** /api/sobre
+**`GET`** /api/sobre
 
 Retorna informações sobre o projeto.
 
@@ -64,7 +64,7 @@ Exemplo de resposta:
 ]
 ```
 
-**POST** /api/desencurtar
+**`POST`** /api/desencurtar
 Envia uma URL encurtada para ser desencurtada.
 
 Corpo da requisição (JSON):
