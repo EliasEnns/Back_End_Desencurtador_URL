@@ -1,5 +1,4 @@
 package com.desencurtador.desencurtador.Services;
-import com.desencurtador.desencurtador.Services.Secret;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -12,6 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.desencurtador.desencurtador.Secrets.Secret;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -19,7 +19,7 @@ import com.google.gson.JsonParser;
 
 @Service
 public class DesencurtadorService {
-    private Secret Secret;
+    private Secret Secret = new Secret(); // Fuck JAVA
     private String apiUrl = "https://unshorten.me/api/v2/unshorten?format=json&url=";
     private String apiToken = Secret.getApiToken();
     private String shortUrl;
