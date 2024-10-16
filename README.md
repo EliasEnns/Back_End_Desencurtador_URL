@@ -1,50 +1,88 @@
-Requisitos:
+# Desencurtador de Links - API
 
-Java, Maven e Docker.
+Este projeto é uma API desenvolvida em Java que permite desencurtar URLs, retornando o link original de URLs encurtadas. Ele utiliza a API do Unshorten.me para realizar o processo de desencurtamento de forma simples e eficiente.
 
-Antes de começar:
+## Requisitos
 
-Obtenha uma chave API, criando uma conta gratuita em: https://unshorten.me/api
+- **Java** (versão 8 ou superior)
+- **Maven** (para gerenciamento de dependências)
+- **Docker** (para execução em container)
 
-Copie o arquivo Secret.txt para outro nomeado Secret.java no mesmo diretório em:
+## Preparação
 
-desencurtador\src\main\java\com\desencurtador\desencurtador\Secrets
+Antes de iniciar o uso da API, siga os passos abaixo:
 
-e substitua ```"SUA_CHAVE_API"``` pela sua chave.
+1. **Obtenha uma chave API**: Crie uma conta gratuita em [Unshorten.me](https://unshorten.me/api) e obtenha sua chave API.
+2. **Configuração do arquivo de segredo**: 
+   - Copie o arquivo `Secret.txt` para outro arquivo nomeado `Secret.java`, localizado no diretório:  
+     `desencurtador/src/main/java/com/desencurtador/desencurtador/Secrets/`.
+   - Substitua a string `"SUA_CHAVE_API"` pela chave API obtida no passo anterior.
+3. **Limitações**: A API gratuita possui um limite de 10 requisições por hora.
 
-você terá um limite de 10 requisições por hora.
+## Compilando e Executando o Projeto
 
-Compilando o código:
+### Compilação
 
-execute o comando para compilar o código:
+Para compilar o código, execute o seguinte comando no diretório raiz do projeto:
+
+```bash
 mvn clean package
+```
+### Execução com Docker
 
-execute o comando para criar a instância no docker
+Para criar e iniciar o container Docker:
+
+```bash
 docker-compose up --build
+```
 
-Utilizando a API:
+## Endpoints da API
 
-Rotas GET:
+**GET** /api/sobre
 
-http://localhost:8080/api/sobre
+Retorna informações sobre o projeto.
 
-Deve retornar:
+Exemplo de resposta:
+
+```json
 {
-	"projeto": "Desencurtador de Links",
-	"estudante": "Elias Enns e Michel Almeida da Rosa"
+  "projeto": "Desencurtador de Links",
+  "estudante": "Elias Enns e Michel Almeida da Rosa"
 }
+```
 
-http://localhost:8080/api/consulta
-Deve retornar um array com todas as URLs desencurtadas.
+**GET** /api/consulta
 
-Rotas POST
+Retorna um array com todas as URLs desencurtadas até o momento.
 
-http://localhost:8080/api/desencurtar
+Exemplo de resposta:
 
-Recebe (Json):
+```plaintext
+[
+  "https://www.reddit.com",
+  "https://www.example.com"
+]
+```
+
+**POST** /api/desencurtar
+Envia uma URL encurtada para ser desencurtada.
+
+Corpo da requisição (JSON):
+```json
 {
-	"shortUrl":"https://encurtador.com.br/RZS8r"
+  "projeto": "Desencurtador de Links",
+  "estudante": "Elias Enns e Michel Almeida da Rosa"
 }
+```
 
-Retorna (string) URL desencurtada
+Exemplo de resposta:
+
+```plaintext
 https://www.reddit.com
+```
+
+Observações
+
+O limite de requisições por hora depende do plano gratuito da Unshorten.me.
+Esta API foi desenvolvida como parte de um projeto acadêmico por Elias Enns e Michel Almeida da Rosa.
+
